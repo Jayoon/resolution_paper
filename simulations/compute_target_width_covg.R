@@ -145,28 +145,28 @@ for(setting in 1:3) {
                     "_ker", ker, suffix))
         true.vals <- res
         for(q in qs) {
-          target = true.vals[q == qs,]
+          target = true.vals[as.character(q),]
           # WQ
-          covg[,h == h.list, ker == ker.list, q == qs, 1] <- 
-            apply(CIs[,h == h.list, ker == ker.list, q == qs, 1, 1,] <= target &
-                    CIs[,h == h.list, ker == ker.list, q == qs, 1, 2,] >= target,
+          covg[,as.character(h), ker == ker.list, as.character(q), 1] <- 
+            apply(CIs[,as.character(h), ker == ker.list, as.character(q), 1, 1,] <= target &
+                    CIs[,as.character(h), ker == ker.list, as.character(q), 1, 2,] >= target,
                   1, mean)
-          width_vec <- CIs[,h == h.list, ker == ker.list, q == qs, 1, 2,] - 
-            CIs[,h == h.list, ker == ker.list, q == qs, 1, 1,]
-          width[,h == h.list, ker == ker.list, q == qs, 1] <-
+          width_vec <- CIs[,as.character(h), ker == ker.list, as.character(q), 1, 2,] - 
+            CIs[,as.character(h), ker == ker.list, as.character(q), 1, 1,]
+          width[,as.character(h), ker == ker.list, as.character(q), 1] <-
             apply(width_vec, 1, mean.rminf)
-          infPer[,h == h.list, ker == ker.list, q == qs, 1] <-
+          infPer[,as.character(h), ker == ker.list, as.character(q), 1] <-
             apply(width_vec, 1, per.inf)
           # QR
-          covg[,h == h.list, ker == ker.list, q == qs, 2] <-
-            apply(CIs[,h == h.list, ker == ker.list, q == qs, 2, 1,] <= target &
-                    CIs[,h == h.list, ker == ker.list, q == qs, 2, 2,] >= target,
+          covg[,as.character(h), ker == ker.list, as.character(q), 2] <-
+            apply(CIs[,as.character(h), ker == ker.list, as.character(q), 2, 1,] <= target &
+                    CIs[,as.character(h), ker == ker.list, as.character(q), 2, 2,] >= target,
                   1, mean)
-          width_vec <- CIs[,h == h.list, ker == ker.list, q == qs, 2, 2,] - 
-            CIs[,h == h.list, ker == ker.list, q == qs, 2, 1,]
-          width[,h == h.list, ker == ker.list, q == qs, 2] <-
+          width_vec <- CIs[,as.character(h), ker == ker.list, as.character(q), 2, 2,] - 
+            CIs[,as.character(h), ker == ker.list, as.character(q), 2, 1,]
+          width[,as.character(h), ker == ker.list, as.character(q), 2] <-
             apply(width_vec, 1, mean.rminf)
-          infPer[,h == h.list, ker == ker.list, q == qs, 2] <-
+          infPer[,as.character(h), ker == ker.list, as.character(q), 2] <-
             apply(width_vec, 1, per.inf)
         }
       }
