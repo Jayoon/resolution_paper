@@ -1,5 +1,5 @@
 # resolution_paper
-This repository contains the R code to reproduce the results in the paper 'Tight Distribution-Free Confidence Intervals for Local Quantile Regression'.
+This repository contains the R code to reproduce the results in the paper ['Tight Distribution-Free Confidence Intervals for Local Quantile Regression'](https://arxiv.org/abs/2307.08594).
 
 ## Folders 
 
